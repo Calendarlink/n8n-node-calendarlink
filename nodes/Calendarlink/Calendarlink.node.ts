@@ -1,28 +1,31 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { httpVerbFields, httpVerbOperations } from './HttpVerbDescription';
-
-export class HttpBin implements INodeType {
+import {
+	NodeConnectionType,
+} from 'n8n-workflow';
+import { calendarlinkOrganizationOperations } from './operations/organization';
+import { calendarlinkOrganizationResources } from './resources/organization';
+export class Calendarlink implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'HttpBin',
-		name: 'httpBin',
-		icon: 'file:httpbin.svg',
+		displayName: 'Calendarlink',
+		name: 'calendarlink',
+		icon: 'file:calendarlink.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with HttpBin API',
+		description: 'Interact with Calendarlink API',
 		defaults: {
-			name: 'HttpBin',
+			name: 'Calendarlink',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionType.Main],
+		outputs: [NodeConnectionType.Main],
 		credentials: [
 			{
-				name: 'httpbinApi',
+				name: 'CalendarlinkApi',
 				required: false,
 			},
 		],
 		requestDefaults: {
-			baseURL: 'https://httpbin.org',
+			baseURL: 'https://my.calendarlink.com/api/v1',
 			url: '',
 			headers: {
 				Accept: 'application/json',
@@ -41,22 +44,11 @@ export class HttpBin implements INodeType {
 		 *
 		 */
 		properties: [
-			{
-				displayName: 'Resource',
-				name: 'resource',
-				type: 'options',
-				noDataExpression: true,
-				options: [
-					{
-						name: 'HTTP Verb',
-						value: 'httpVerb',
-					},
-				],
-				default: 'httpVerb',
-			},
+			// Resources
+			... calendarlinkOrganizationResources,
 
-			...httpVerbOperations,
-			...httpVerbFields,
+			// Operations
+			... calendarlinkOrganizationOperations,
 		],
 	};
 }
