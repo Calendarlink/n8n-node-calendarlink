@@ -5,6 +5,8 @@ import {
 import { calendarlinkOrganizationOperations } from './operations/organization';
 import { calendarlinkResources } from './resources';
 import { calendarlinkEventCollectionOperations } from './operations/eventCollection';
+import { calendarlinkEventOperations } from './operations/event';
+
 export class Calendarlink implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Calendarlink',
@@ -51,6 +53,8 @@ export class Calendarlink implements INodeType {
 			// Operations
 			... calendarlinkOrganizationOperations,
 			... calendarlinkEventCollectionOperations,
+			... calendarlinkEventOperations,
 		],
+
 	};
 }

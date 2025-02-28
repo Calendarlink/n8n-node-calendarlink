@@ -15,6 +15,10 @@ export const calendarlinkResources: INodeProperties[] = [
 				name: 'Event Collection',
 				value: 'eventCollection',
 			},
+			{
+				name: 'Event',
+				value: 'event',
+			},
 		],
 		default: 'organization',
 	}
