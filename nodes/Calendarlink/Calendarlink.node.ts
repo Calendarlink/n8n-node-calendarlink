@@ -3,7 +3,8 @@ import {
 	NodeConnectionType,
 } from 'n8n-workflow';
 import { calendarlinkOrganizationOperations } from './operations/organization';
-import { calendarlinkOrganizationResources } from './resources/organization';
+import { calendarlinkResources } from './resources';
+import { calendarlinkEventCollectionOperations } from './operations/eventCollection';
 export class Calendarlink implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Calendarlink',
@@ -45,10 +46,11 @@ export class Calendarlink implements INodeType {
 		 */
 		properties: [
 			// Resources
-			... calendarlinkOrganizationResources,
+			... calendarlinkResources,
 
 			// Operations
 			... calendarlinkOrganizationOperations,
+			... calendarlinkEventCollectionOperations,
 		],
 	};
 }

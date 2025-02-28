@@ -1,6 +1,6 @@
 import { INodeProperties } from 'n8n-workflow';
 
-export const calendarlinkOrganizationResources: INodeProperties[] = [
+export const calendarlinkResources: INodeProperties[] = [
 	{
 		displayName: 'Resource',
 		name: 'resource',
@@ -11,7 +11,11 @@ export const calendarlinkOrganizationResources: INodeProperties[] = [
 				name: 'Organization',
 				value: 'organization',
 			},
+			{
+				name: 'Event Collection',
+				value: 'eventCollection',
+			},
 		],
 		default: 'organization',
-	},
+	}
 ];
