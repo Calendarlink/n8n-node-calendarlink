@@ -1,15 +1,17 @@
 {
   "name": "n8n-nodes-calendarlink",
   "version": "0.1.0",
-  "description": "",
+  "description": "N8N Node for CalendarLink",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "calendarlink",
+    "add to calendar"
   ],
   "license": "MIT",
   "homepage": "",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Christian Schoenmakers",
+    "email": "chris@calendarlink.com"
   },
   "repository": {
     "type": "git",

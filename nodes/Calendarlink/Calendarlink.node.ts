@@ -1,7 +1,4 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
-import {
-	NodeConnectionType,
-} from 'n8n-workflow';
 import { calendarlinkOrganizationOperations } from './operations/organization';
 import { calendarlinkResources } from './resources';
 import { calendarlinkEventCollectionOperations } from './operations/eventCollection';
@@ -19,19 +16,19 @@ export class Calendarlink implements INodeType {
 		defaults: {
 			name: 'Calendarlink',
 		},
-		inputs: [NodeConnectionType.Main],
-		outputs: [NodeConnectionType.Main],
+		inputs: ['main'],
+		outputs: ['main'],
 		credentials: [
 			{
-				name: 'CalendarlinkApi',
-				required: false,
+				name: 'calendarlinkApi',
+				required: true,
 			},
 		],
 		requestDefaults: {
 			baseURL: 'https://my.calendarlink.com/api/v1',
 			url: '',
 			headers: {
-				Accept: 'application/json',
+				'Accept': 'application/json',
 				'Content-Type': 'application/json',
 			},
 		},
