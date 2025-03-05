@@ -1,6 +1,6 @@
 {
   "name": "@calendarlink/n8n-nodes-calendarlink",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "N8N Node for CalendarLink",
   "keywords": [
     "n8n-community-node-package",
@@ -38,10 +38,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/CalendarlinkApi.credentials.ts"
+      "dist/credentials/CalendarlinkApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Calendarlink/Calendarlink.node.ts"
+      "dist/nodes/Calendarlink/Calendarlink.node.js"
     ]
   },
   "devDependencies": {
