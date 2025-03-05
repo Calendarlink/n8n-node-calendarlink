@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-calendarlink",
+  "name": "@calendarlink/n8n-nodes-calendarlink",
   "version": "0.1.0",
   "description": "N8N Node for CalendarLink",
   "keywords": [
@@ -8,14 +8,14 @@
     "add to calendar"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/Calendarlink/n8n-node-calendarlink#readme",
   "author": {
     "name": "Christian Schoenmakers",
     "email": "chris@calendarlink.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Calendarlink/n8n-node-calendarlink"
+    "url": "git+https://github.com/Calendarlink/n8n-node-calendarlink.git"
   },
   "engines": {
     "node": ">=18.10",
@@ -54,5 +54,8 @@
   },
   "peerDependencies": {
     "n8n-workflow": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/Calendarlink/n8n-node-calendarlink/issues"
   }
 }
