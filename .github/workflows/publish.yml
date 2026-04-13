@@ -28,17 +28,6 @@ jobs:
 
       - run: pnpm lint
 
-      - name: Verify token is set
-        run: |
-          if [ -z "$NODE_AUTH_TOKEN" ]; then
-            echo "::error::NPM_TOKEN secret is empty or not set"
-            exit 1
-          else
-            echo "Token is set (length: ${#NODE_AUTH_TOKEN})"
-          fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
